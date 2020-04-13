@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Bannerlord Mod (C#)</Name>
+    <Description>Project template for creating Mount and Blade 2: Bannerlord mods.</Description>
+    <Icon>BannerlordModTemplate.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <LanguageTag>csharp</LanguageTag>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>1ffe5160-606c-4811-bca8-ed7567dc3e0f</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Bannerlord Mod Template</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">$safeprojectname$SubModule.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">SubModule.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" OpenInEditor="true">Readme.txt</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>BannerlordModTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=29b2cc434646b683</Assembly>
+    <FullClassName>BannerlordModTemplateWizard.WizardImplementation</FullClassName>
+  </WizardExtension>
+  <!--
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=29b2cc434646b683</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <Packages repository="extension" repositoryId="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea">
+      <package id="Lib.Harmony" version="2.0.0.9"/>
+    </Packages>
+  </WizardData>
+  -->
+</VSTemplate>
