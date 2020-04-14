@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>M&amp;B 2: Bannerlord Mod (C#)</Name>
+    <Name>Mount and Blade 2: Bannerlord Mod (C#)</Name>
     <Description>Project template for creating Mount and Blade 2: Bannerlord mods.</Description>
     <Icon>TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <LanguageTag>csharp</LanguageTag>
-    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.7.2</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
     <TemplateID>1ffe5160-606c-4811-bca8-ed7567dc3e0f</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
@@ -23,7 +23,7 @@
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>BannerlordModTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=29b2cc434646b683</Assembly>
+    <Assembly>BannerlordModTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=bad32e6b9bf9454c</Assembly>
     <FullClassName>BannerlordModTemplateWizard.WizardImplementation</FullClassName>
   </WizardExtension>
   <WizardExtension>

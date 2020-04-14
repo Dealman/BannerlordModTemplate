@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea" Version="1.1.2" Language="en-US" Publisher="Dealman" />
-    <DisplayName>BannerlordModTemplateWizard</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <Identity Id="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea" Version="1.1.3" Language="en-US" Publisher="Dealman" />
+    <DisplayName>Mount and Blade 2 Bannerlord Mod Template</DisplayName>
+    <Description>A project template extension to ease the creation of mods for Mount and Blade 2 Bannerlord</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
