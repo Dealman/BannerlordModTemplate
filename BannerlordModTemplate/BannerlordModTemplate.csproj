@@ -85,6 +85,9 @@
     <AdditionalFiles Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TemplateIcon.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="SubModule.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

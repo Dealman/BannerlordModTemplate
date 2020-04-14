@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea" Version="1.1" Language="en-US" Publisher="Dealman" />
+    <Identity Id="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea" Version="1.1.2" Language="en-US" Publisher="Dealman" />
     <DisplayName>BannerlordModTemplateWizard</DisplayName>
     <Description>Empty VSIX Project.</Description>
   </Metadata>
