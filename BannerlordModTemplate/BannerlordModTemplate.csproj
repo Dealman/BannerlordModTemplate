@@ -3,6 +3,8 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,217 +47,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.CoreUtility">
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\envdte.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SandBox">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\SandBox.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\EnvDTE80.8.0.1\lib\net10\EnvDTE80.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="SandBox.GauntletUI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\SandBox.GauntletUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SandBox.View">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\SandBox.View.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SandBox.ViewModelCollection">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\SandBox.ViewModelCollection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="StoryMode">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\StoryMode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="StoryMode.GauntletUI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\StoryMode.GauntletUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="StoryMode.View">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\StoryMode.View.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="StoryMode.ViewModelCollection">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\StoryMode.ViewModelCollection.dll</HintPath>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\stdole.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TaleWorlds.BattlEye.Client">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.BattlEye.Client.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.CampaignSystem">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.CampaignSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Core">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Core.ViewModelCollection">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Diamond">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Diamond.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Diamond.AccessProvider.Epic">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Diamond.AccessProvider.Epic.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Diamond.AccessProvider.Steam">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Diamond.AccessProvider.Steam.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Diamond.AccessProvider.Test">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Diamond.AccessProvider.Test.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.DotNet">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.DotNet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.DotNet.AutoGenerated">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.DotNet.AutoGenerated.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Engine">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Engine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Engine.AutoGenerated">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Engine.AutoGenerated.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Engine.GauntletUI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Engine.GauntletUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.GauntletUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI.Data">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.GauntletUI.Data.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI.ExtraWidgets">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.GauntletUI.ExtraWidgets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI.PrefabSystem">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.GauntletUI.PrefabSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI.TooltipExtensions">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.GauntletUI.TooltipExtensions.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.InputSystem">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.InputSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Library">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Library.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Localization">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Localization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.AutoGenerated">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.AutoGenerated.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.CustomBattle">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.CustomBattle.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.Diamond">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.Diamond.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI.Widgets">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.GauntletUI.Widgets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.Helpers">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.Helpers.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.View">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.View.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.NavigationSystem">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.NavigationSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Network">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Network.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.PlatformService">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.PlatformService.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.PlatformService.Epic">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.PlatformService.Epic.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.PlatformService.Steam">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.PlatformService.Steam.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.PlayerServices">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.PlayerServices.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.PSAI">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.PSAI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.SaveSystem">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.SaveSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Starter.DotNetCore">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Starter.DotNetCore.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.Starter.Library">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.Starter.Library.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.TwoDimension">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.TwoDimension.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.TwoDimension.Standalone">
-      <HintPath>E:\Modding\Bannerlord\Native DLLs\TaleWorlds.TwoDimension.Standalone.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -263,17 +73,14 @@
   <ItemGroup>
     <None Include="AssemblyInfo.cs" />
     <None Include="%24safeprojectname%24SubModule.cs" />
+    <None Include="packages.config" />
     <None Include="ProjectTemplate.csproj" />
     <None Include="BannerlordModTemplate.ico" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="BannerlordModTemplate.vstemplate" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Models\" />
-    <Folder Include="Patches\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AdditionalFiles Include="Readme.txt" />
   </ItemGroup>
@@ -284,6 +91,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets" Condition="Exists('..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -14,7 +14,6 @@ namespace BannerlordModTemplateWizard
         private string bannerlordExe;
         private string bannerlordAssemblies;
         private string bannerlordModules;
-        private string modulesToLoad = "";
         private bool createSubModule;
         private bool createReadme;
 

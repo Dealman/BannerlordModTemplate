@@ -38,7 +38,6 @@
             this.cbIncludeReadme = new System.Windows.Forms.CheckBox();
             this.cbIncludeSubModule = new System.Windows.Forms.CheckBox();
             this.gbHarmony = new System.Windows.Forms.GroupBox();
-            this.cbPatchFolder = new System.Windows.Forms.CheckBox();
             this.cbIncludeHarmony = new System.Windows.Forms.CheckBox();
             this.bConfirm = new System.Windows.Forms.Button();
             this.bCancel = new System.Windows.Forms.Button();
@@ -144,43 +143,32 @@
             // 
             // gbHarmony
             // 
-            this.gbHarmony.Controls.Add(this.cbPatchFolder);
             this.gbHarmony.Controls.Add(this.cbIncludeHarmony);
             this.gbHarmony.Location = new System.Drawing.Point(5, 163);
             this.gbHarmony.Name = "gbHarmony";
-            this.gbHarmony.Size = new System.Drawing.Size(628, 64);
+            this.gbHarmony.Size = new System.Drawing.Size(628, 44);
             this.gbHarmony.TabIndex = 6;
             this.gbHarmony.TabStop = false;
             this.gbHarmony.Text = "Harmony Settings";
             // 
-            // cbPatchFolder
-            // 
-            this.cbPatchFolder.AutoSize = true;
-            this.cbPatchFolder.Enabled = false;
-            this.cbPatchFolder.Location = new System.Drawing.Point(14, 42);
-            this.cbPatchFolder.Name = "cbPatchFolder";
-            this.cbPatchFolder.Size = new System.Drawing.Size(249, 17);
-            this.cbPatchFolder.TabIndex = 1;
-            this.cbPatchFolder.Text = "Create \"Patches\" Folder - Not Yet Implemented";
-            this.cbPatchFolder.UseVisualStyleBackColor = true;
-            // 
             // cbIncludeHarmony
             // 
             this.cbIncludeHarmony.AutoSize = true;
+            this.cbIncludeHarmony.Checked = true;
+            this.cbIncludeHarmony.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbIncludeHarmony.Enabled = false;
             this.cbIncludeHarmony.Location = new System.Drawing.Point(9, 19);
             this.cbIncludeHarmony.Name = "cbIncludeHarmony";
-            this.cbIncludeHarmony.Size = new System.Drawing.Size(514, 17);
+            this.cbIncludeHarmony.Size = new System.Drawing.Size(167, 17);
             this.cbIncludeHarmony.TabIndex = 0;
-            this.cbIncludeHarmony.Text = "Include HarmonyLib in Project (can be added manually via NuGet later if wanted) -" +
-    " Not Yet Implemented";
+            this.cbIncludeHarmony.Text = "Include HarmonyLib in Project";
             this.cbIncludeHarmony.UseVisualStyleBackColor = true;
             // 
             // bConfirm
             // 
             this.bConfirm.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.bConfirm.Enabled = false;
-            this.bConfirm.Location = new System.Drawing.Point(12, 233);
+            this.bConfirm.Location = new System.Drawing.Point(12, 213);
             this.bConfirm.Name = "bConfirm";
             this.bConfirm.Size = new System.Drawing.Size(75, 23);
             this.bConfirm.TabIndex = 8;
@@ -191,7 +179,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.bCancel.Location = new System.Drawing.Point(551, 233);
+            this.bCancel.Location = new System.Drawing.Point(551, 213);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(75, 23);
             this.bCancel.TabIndex = 9;
@@ -204,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bCancel;
-            this.ClientSize = new System.Drawing.Size(638, 261);
+            this.ClientSize = new System.Drawing.Size(638, 242);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bConfirm);
             this.Controls.Add(this.gbTemplateSettings);
@@ -236,7 +224,6 @@
         private System.Windows.Forms.CheckBox cbIncludeReadme;
         private System.Windows.Forms.CheckBox cbIncludeSubModule;
         private System.Windows.Forms.GroupBox gbHarmony;
-        private System.Windows.Forms.CheckBox cbPatchFolder;
         private System.Windows.Forms.CheckBox cbIncludeHarmony;
         private System.Windows.Forms.Button bConfirm;
         private System.Windows.Forms.Button bCancel;

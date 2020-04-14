@@ -62,6 +62,10 @@
     <Compile Include="WizardImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Lib.Harmony.2.0.0.9.nupkg">
+      <Link>Packages\Lib.Harmony.2.0.0.9.nupkg</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="key.snk" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
@@ -69,6 +73,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NuGet.VisualStudio">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NuGet.VisualStudio.Interop">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.VisualStudio.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

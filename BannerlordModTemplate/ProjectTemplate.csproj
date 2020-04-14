@@ -251,7 +251,7 @@
             <Private>False</Private>
           </Reference>
         <!-- Harmony -->
-          <!-- TODO -->
+          <!-- TODO: Don't think this can be made optional -->
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="$safeprojectname$SubModule.cs" />

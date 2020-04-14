@@ -12,6 +12,7 @@
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Bannerlord Mod Template</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
@@ -25,15 +26,13 @@
     <Assembly>BannerlordModTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=29b2cc434646b683</Assembly>
     <FullClassName>BannerlordModTemplateWizard.WizardImplementation</FullClassName>
   </WizardExtension>
-  <!--
   <WizardExtension>
-    <Assembly>NuGet.VisualStudio, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=29b2cc434646b683</Assembly>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
     <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
   </WizardExtension>
   <WizardData>
-    <Packages repository="extension" repositoryId="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea">
+    <packages repository="extension" repositoryId="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea">
       <package id="Lib.Harmony" version="2.0.0.9"/>
-    </Packages>
+    </packages>
   </WizardData>
-  -->
 </VSTemplate>
