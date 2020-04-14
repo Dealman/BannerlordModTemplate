@@ -34,6 +34,7 @@
             this.lBannerlordPath = new System.Windows.Forms.Label();
             this.tbBannerlordPath = new System.Windows.Forms.TextBox();
             this.gbTemplateSettings = new System.Windows.Forms.GroupBox();
+            this.cbUseLauncherMods = new System.Windows.Forms.CheckBox();
             this.cbIncludeReadme = new System.Windows.Forms.CheckBox();
             this.cbIncludeSubModule = new System.Windows.Forms.CheckBox();
             this.gbHarmony = new System.Windows.Forms.GroupBox();
@@ -99,14 +100,25 @@
             // 
             // gbTemplateSettings
             // 
+            this.gbTemplateSettings.Controls.Add(this.cbUseLauncherMods);
             this.gbTemplateSettings.Controls.Add(this.cbIncludeReadme);
             this.gbTemplateSettings.Controls.Add(this.cbIncludeSubModule);
             this.gbTemplateSettings.Location = new System.Drawing.Point(4, 69);
             this.gbTemplateSettings.Name = "gbTemplateSettings";
-            this.gbTemplateSettings.Size = new System.Drawing.Size(629, 66);
+            this.gbTemplateSettings.Size = new System.Drawing.Size(629, 88);
             this.gbTemplateSettings.TabIndex = 7;
             this.gbTemplateSettings.TabStop = false;
             this.gbTemplateSettings.Text = "Mod Template Settings";
+            // 
+            // cbUseLauncherMods
+            // 
+            this.cbUseLauncherMods.AutoSize = true;
+            this.cbUseLauncherMods.Location = new System.Drawing.Point(9, 65);
+            this.cbUseLauncherMods.Name = "cbUseLauncherMods";
+            this.cbUseLauncherMods.Size = new System.Drawing.Size(240, 17);
+            this.cbUseLauncherMods.TabIndex = 2;
+            this.cbUseLauncherMods.Text = "Use Same Mods as Selected in the Launcher";
+            this.cbUseLauncherMods.UseVisualStyleBackColor = true;
             // 
             // cbIncludeReadme
             // 
@@ -134,7 +146,7 @@
             // 
             this.gbHarmony.Controls.Add(this.cbPatchFolder);
             this.gbHarmony.Controls.Add(this.cbIncludeHarmony);
-            this.gbHarmony.Location = new System.Drawing.Point(5, 141);
+            this.gbHarmony.Location = new System.Drawing.Point(5, 163);
             this.gbHarmony.Name = "gbHarmony";
             this.gbHarmony.Size = new System.Drawing.Size(628, 64);
             this.gbHarmony.TabIndex = 6;
@@ -168,7 +180,7 @@
             // 
             this.bConfirm.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.bConfirm.Enabled = false;
-            this.bConfirm.Location = new System.Drawing.Point(12, 211);
+            this.bConfirm.Location = new System.Drawing.Point(12, 233);
             this.bConfirm.Name = "bConfirm";
             this.bConfirm.Size = new System.Drawing.Size(75, 23);
             this.bConfirm.TabIndex = 8;
@@ -179,7 +191,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.bCancel.Location = new System.Drawing.Point(550, 211);
+            this.bCancel.Location = new System.Drawing.Point(551, 233);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(75, 23);
             this.bCancel.TabIndex = 9;
@@ -192,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bCancel;
-            this.ClientSize = new System.Drawing.Size(638, 239);
+            this.ClientSize = new System.Drawing.Size(638, 261);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bConfirm);
             this.Controls.Add(this.gbTemplateSettings);
@@ -228,5 +240,6 @@
         private System.Windows.Forms.CheckBox cbIncludeHarmony;
         private System.Windows.Forms.Button bConfirm;
         private System.Windows.Forms.Button bCancel;
+        private System.Windows.Forms.CheckBox cbUseLauncherMods;
     }
 }

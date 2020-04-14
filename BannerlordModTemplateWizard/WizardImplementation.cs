@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TemplateWizard;
 using System.Windows.Forms;
 using EnvDTE;
+using System.Text;
 
 namespace BannerlordModTemplateWizard
 {
@@ -13,6 +14,7 @@ namespace BannerlordModTemplateWizard
         private string bannerlordExe;
         private string bannerlordAssemblies;
         private string bannerlordModules;
+        private string modulesToLoad = "";
         private bool createSubModule;
         private bool createReadme;
 
@@ -70,10 +72,25 @@ namespace BannerlordModTemplateWizard
                     createSubModule = myForm.IncludeSubModule;
                     createReadme = myForm.IncludeReadme;
 
+                    StringBuilder argumentString = new StringBuilder();
+                    Console.WriteLine($"[DEBUG]: Module List Count {myForm.ModuleList.Count}");
+                    if (myForm.ModuleList.Count >= 1 && myForm.UseLauncherMods)
+                    {
+                        argumentString.Append("/singleplayer _MODULES_*");
+
+                        foreach (string moduleName in myForm.ModuleList)
+                        {
+                            argumentString.Append($"{moduleName}*");
+                        }
+                    } else {
+                        argumentString.Append("/singleplayer _MODULES_*Native*SandBoxCore*SandBox*StoryMode*");
+                    }
+
                     //replacementsDictionary.Add("$bannerlordpath$", bannerlordPath);
                     replacementsDictionary.Add("$bannerlordexe$", bannerlordExe);
                     replacementsDictionary.Add("$bannerlordassemblies$", bannerlordAssemblies);
                     replacementsDictionary.Add("$bannerlordmodules$", bannerlordModules);
+                    replacementsDictionary.Add("$bannerlordargsprefix$", argumentString.ToString());
                 } else {
 
                 }

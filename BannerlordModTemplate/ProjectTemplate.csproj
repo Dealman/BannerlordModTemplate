@@ -33,7 +33,7 @@
   <PropertyGroup>
     <StartAction>Program</StartAction>
     <StartProgram>$bannerlordexe$</StartProgram>
-    <StartArguments>/singleplayer _MODULES_*Native*SandBoxCore*SandBox*StoryMode*$safeprojectname$*_MODULES_</StartArguments>
+    <StartArguments>$bannerlordargsprefix$$safeprojectname$*_MODULES_</StartArguments>
     <StartWorkingDirectory>$bannerlordassemblies$</StartWorkingDirectory>
   </PropertyGroup>
 	<ItemGroup>
