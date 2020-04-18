@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TemplateWizard;
 using System.Windows.Forms;
 using EnvDTE;
 using System.Text;
+using System.IO;
 
 namespace BannerlordModTemplateWizard
 {
@@ -56,10 +57,15 @@ namespace BannerlordModTemplateWizard
         }
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
+            string destinationDirectory = replacementsDictionary["$destinationdirectory$"];
+
             try
             {
                 myForm = new WizardForm();
                 DialogResult result = myForm.ShowDialog();
+
+                if(result != DialogResult.Yes)
+                    throw new WizardBackoutException();
 
                 if (result == DialogResult.Yes)
                 {
@@ -90,11 +96,17 @@ namespace BannerlordModTemplateWizard
                     replacementsDictionary.Add("$bannerlordassemblies$", bannerlordAssemblies);
                     replacementsDictionary.Add("$bannerlordmodules$", bannerlordModules);
                     replacementsDictionary.Add("$bannerlordargsprefix$", argumentString.ToString());
-                } else {
-
                 }
             } catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+                string backOneFolder = Path.GetFullPath(Path.Combine(destinationDirectory, @"..\"));
+
+                if(Directory.Exists(backOneFolder))
+                {
+                    Directory.Delete(backOneFolder, true);
+                } else if(Directory.Exists(destinationDirectory)) {
+                    Directory.Delete(destinationDirectory, true);
+                }
+                throw;
             }
         }
         // This method is only called for item templates, not for project templates.

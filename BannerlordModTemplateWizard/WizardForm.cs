@@ -119,5 +119,10 @@ namespace BannerlordModTemplateWizard
         {
             //Close();
         }
+
+        private void bCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
