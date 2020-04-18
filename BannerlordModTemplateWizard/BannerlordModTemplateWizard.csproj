@@ -74,14 +74,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="NuGet.VisualStudio">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.VisualStudio.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="NuGet.VisualStudio.Interop">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.VisualStudio.Interop.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -91,6 +83,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
+    <PackageReference Include="VSSDK.TemplateWizardInterface">
+      <Version>12.0.4</Version>
+    </PackageReference>
+        <PackageReference Include="NuGet.VisualStudio">
+      <Version>5.5.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BannerlordModTemplate\BannerlordModTemplate.csproj">

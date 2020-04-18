@@ -47,20 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\envdte.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\EnvDTE80.8.0.1\lib\net10\EnvDTE80.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\stdole.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -73,14 +59,26 @@
   <ItemGroup>
     <None Include="AssemblyInfo.cs" />
     <None Include="%24safeprojectname%24SubModule.cs" />
-    <None Include="packages.config" />
     <None Include="ProjectTemplate.csproj" />
     <None Include="BannerlordModTemplate.ico" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="BannerlordModTemplate.vstemplate" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="EnvDTE">
+      <Version>8.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="EnvDTE80">
+      <Version>8.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NuGet.VisualStudio">
+      <Version>5.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="stdole">
+      <Version>7.0.3301</Version>
+    </PackageReference>
+  </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="Readme.txt" />
   </ItemGroup>
@@ -94,13 +92,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets" Condition="Exists('..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.VisualStudio.5.5.1\build\NuGet.VisualStudio.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
