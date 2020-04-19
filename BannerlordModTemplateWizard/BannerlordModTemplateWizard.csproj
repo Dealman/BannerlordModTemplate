@@ -62,8 +62,7 @@
     <Compile Include="WizardImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Lib.Harmony.2.0.0.9.nupkg">
-      <Link>Packages\Lib.Harmony.2.0.0.9.nupkg</Link>
+    <Content Include="$(PkgLib_Harmony)\Lib.Harmony.2.0.0.9.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="key.snk">
@@ -81,10 +80,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.0.0.9" PrivateAssets="all" GeneratePathProperty="true" />
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
     <PackageReference Include="VSSDK.TemplateWizardInterface">
-      <Version>12.0.4</Version>
+        <Version>12.0.4</Version>
     </PackageReference>
         <PackageReference Include="NuGet.VisualStudio">
       <Version>5.5.1</Version>
