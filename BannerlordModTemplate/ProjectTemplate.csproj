@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Main Project Properties -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,14 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <!-- Debugging Properties -->
-  <!-- Obsolete; Used for .NET Framework, seemingly not supported by .NET Core? Left it in case of making 2 separate branches instead. New settings are nastily generated in TemplateWizard.cs
   <PropertyGroup>
     <StartAction>Program</StartAction>
     <StartProgram>$BannerlordExecutable$</StartProgram>
     <StartArguments>$BannerlordDebugArgs$</StartArguments>
     <StartWorkingDirectory>$BannerlordDirectory$\bin\Win64_Shipping_Client</StartWorkingDirectory>
   </PropertyGroup>
-  -->
   <!-- Bannerlord Native Assemblies -->
   <ItemGroup>
     <Reference Include="$BannerlordDirectory$\bin\Win64_Shipping_Client\TaleWorlds*.dll">
@@ -68,14 +66,14 @@
   </ItemGroup>
   <!-- Files & Classes -->
   <ItemGroup>
-    <Content Include="SubModule.cs" />
-    <Content Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Readme.txt"/>
     <Content Include="SubModule.xml"/>
   </ItemGroup>
   <!-- Post-Build -->
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /d /y &quot;$(MSBuildProjectDirectory)\SubModule.xml&quot; &quot;$BannerlordDirectory$\Modules\$safeprojectname$&quot;"/>
-  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /d /y "$(MSBuildProjectDirectory)\SubModule.xml" "$bannerlordmodules$\$safeprojectname$"</PostBuildEvent>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
