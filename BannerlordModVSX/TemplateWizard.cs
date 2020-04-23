@@ -136,13 +136,14 @@ namespace BannerlordModVSX
                     wizardWindow.Close();
                 } else {
                     // The user clicked cancel or closed the window, throw the exception
+                    wizardWindow.Close();
                     throw new WizardBackoutException();
                 }
             } catch (Exception ex) {
-                // Project folder would still have been created, clean it up if the user decided to back out
-
-                if(ex.InnerException is WizardBackoutException || ex.InnerException is WizardCancelledException)
+                
+                if(ex.GetType().IsAssignableFrom(typeof(WizardBackoutException)) || ex.GetType().IsAssignableFrom(typeof(WizardCancelledException)))
                 {
+                    // Project folder would still have been created, clean it up if the user decided to back out
                     string projectFolder = Path.GetFullPath(Path.Combine(destinationDirectory, @"..\"));
 
                     if (Directory.Exists(projectFolder))
@@ -151,6 +152,7 @@ namespace BannerlordModVSX
                     } else {
                         Directory.Delete(destinationDirectory, true);
                     }
+                    throw;
                 } else {
                     MessageBox.Show($"An error has occurred!\n\nError Message:\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }

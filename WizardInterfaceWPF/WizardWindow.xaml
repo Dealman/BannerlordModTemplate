@@ -17,6 +17,18 @@
     TitleCharacterCasing="Normal"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button
+                x:Name="GitHubButton"
+                Click="ButtonClick_Manager"
+                Content="GitHub" />
+            <Button
+                x:Name="ForumButton"
+                Click="ButtonClick_Manager"
+                Content="Forum" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -26,12 +38,6 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Button x:Name="GitHubButton" Content="GitHub" Click="ButtonClick_Manager"/>
-            <Button x:Name="ForumButton" Content="Forum" Click="ButtonClick_Manager"/>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
     <Grid Background="#FF303030">
         <Button
             x:Name="ConfirmButton"
