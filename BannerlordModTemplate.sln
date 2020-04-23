@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BannerlordModTemplate", "BannerlordModTemplate\BannerlordModTemplate.csproj", "{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BannerlordModVSX", "BannerlordModVSX\BannerlordModVSX.csproj", "{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BannerlordModTemplateWizard", "BannerlordModTemplateWizard\BannerlordModTemplateWizard.csproj", "{828FE87B-37F4-4120-AED2-7FADF98AD47C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BannerlordModTemplate", "BannerlordModTemplate\BannerlordModTemplate.csproj", "{F463F9D8-AAC0-493F-B918-16A62F334F3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardInterfaceWPF", "WizardInterfaceWPF\WizardInterfaceWPF.csproj", "{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{828FE87B-37F4-4120-AED2-7FADF98AD47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{828FE87B-37F4-4120-AED2-7FADF98AD47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{828FE87B-37F4-4120-AED2-7FADF98AD47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{828FE87B-37F4-4120-AED2-7FADF98AD47C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F463F9D8-AAC0-493F-B918-16A62F334F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F463F9D8-AAC0-493F-B918-16A62F334F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F463F9D8-AAC0-493F-B918-16A62F334F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F463F9D8-AAC0-493F-B918-16A62F334F3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CCC6033A-EF6F-4E9D-8F88-48BBBC7A52CA}
+		SolutionGuid = {94006A88-A84B-4954-9B53-D24C401DC8F9}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using System.Threading;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace BannerlordModTemplateWizard
+namespace BannerlordModVSX
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -24,13 +24,13 @@ namespace BannerlordModTemplateWizard
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(BannerlordModTemplateWizardPackage.PackageGuidString)]
-    public sealed class BannerlordModTemplateWizardPackage : AsyncPackage
+    [Guid(BannerlordModVSXPackage.PackageGuidString)]
+    public sealed class BannerlordModVSXPackage : AsyncPackage
     {
         /// <summary>
-        /// BannerlordModTemplateWizardPackage GUID string.
+        /// BannerlordModVSXPackage GUID string.
         /// </summary>
-        public const string PackageGuidString = "3d16a08a-330e-4fe1-abb6-de3c28128f79";
+        public const string PackageGuidString = "253bbe12-4ec9-4c87-a6b3-937a3fc1a45f";
 
         #region Package Members
 

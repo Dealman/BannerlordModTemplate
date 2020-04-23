@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<GameDirectory></GameDirectory>
+		<DebugWithLauncherModules>false</DebugWithLauncherModules>
+		<ModuleReferences>
+			<Native>true</Native>
+			<SandBox>true</SandBox>
+			<StoryMode>true</StoryMode>
+			<CustomBattle>false</CustomBattle>
+		</ModuleReferences>
+	</PropertyGroup>
+</Project>

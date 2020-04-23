@@ -16,11 +16,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{828FE87B-37F4-4120-AED2-7FADF98AD47C}</ProjectGuid>
+    <ProjectGuid>{83D973C9-48FA-4CEA-B33C-6F7B30EA86C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BannerlordModTemplateWizard</RootNamespace>
-    <AssemblyName>BannerlordModTemplateWizard</AssemblyName>
+    <RootNamespace>BannerlordModVSX</RootNamespace>
+    <AssemblyName>BannerlordModVSX</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>
@@ -52,19 +52,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BannerlordModTemplateWizardPackage.cs" />
-    <Compile Include="WizardForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WizardForm.Designer.cs">
-      <DependentUpon>WizardForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WizardImplementation.cs" />
+    <Compile Include="BannerlordModVSXPackage.cs" />
+    <Compile Include="TemplateWizard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(PkgLib_Harmony)\Lib.Harmony.2.0.0.9.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <None Include="key.snk">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -73,37 +64,62 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.0.0.9" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="MahApps.Metro">
+      <Version>2.0.0-alpha0748</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
-    <PackageReference Include="VSSDK.TemplateWizardInterface">
-        <Version>12.0.4</Version>
-    </PackageReference>
-        <PackageReference Include="NuGet.VisualStudio">
+    <PackageReference Include="NuGet.VisualStudio">
       <Version>5.5.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\License.txt">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\ReleaseNotes.txt">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TemplateIcon.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BannerlordModTemplate\BannerlordModTemplate.csproj">
-      <Project>{0ACCC242-262B-47B0-BF98-AA1CD58CC80F}</Project>
+      <Project>{F463F9D8-AAC0-493F-B918-16A62F334F3F}</Project>
       <Name>BannerlordModTemplate</Name>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
+    <ProjectReference Include="..\WizardInterfaceWPF\WizardInterfaceWPF.csproj">
+      <Project>{81B4FC29-26E1-4F8B-8C0E-6CF76FBC4EA7}</Project>
+      <Name>WizardInterfaceWPF</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="WizardForm.resx">
-      <DependentUpon>WizardForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

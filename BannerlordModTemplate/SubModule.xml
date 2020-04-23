@@ -14,7 +14,7 @@
     <SubModule>
       <Name value="$safeprojectname$"/>
       <DLLName value="$safeprojectname$.dll"/>
-      <SubModuleClassType value="$safeprojectname$.$safeprojectname$SubModule"/>
+      <SubModuleClassType value="$safeprojectname$.SubModule"/>
       <Tags>
         <Tag key="DedicatedServerType" value="none" />
         <Tag key="IsNoRenderModeElement" value="false" />

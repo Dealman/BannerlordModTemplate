@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Mount and Blade 2: Bannerlord Mod (C#)</Name>
-    <Description>Project template for creating Mount and Blade 2: Bannerlord mods.</Description>
+    <Name>Mount and Blade 2 Bannerlord Mod (C#)</Name>
+    <Description>Project template for Mount and Blade 2 Bannerlord.</Description>
     <Icon>TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <LanguageTag>csharp</LanguageTag>
     <RequiredFrameworkVersion>4.7.2</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
-    <TemplateID>1ffe5160-606c-4811-bca8-ed7567dc3e0f</TemplateID>
+    <TemplateID>5b5a7681-5d65-47cb-931d-d9f5c32c2663</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Bannerlord_Mod_</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
@@ -17,21 +17,17 @@
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true">$safeprojectname$SubModule.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true">SubModule.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">SubModule.cs</ProjectItem>
       <ProjectItem ReplaceParameters="false" OpenInEditor="true">Readme.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="false">SubModule.xml</ProjectItem>
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>BannerlordModTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=bad32e6b9bf9454c</Assembly>
-    <FullClassName>BannerlordModTemplateWizard.WizardImplementation</FullClassName>
-  </WizardExtension>
-  <WizardExtension>
-    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+    <Assembly>BannerlordModVSX, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=39f415acf9152ca7</Assembly>
+    <FullClassName>BannerlordModVSX.TemplateWizard</FullClassName>
   </WizardExtension>
   <WizardData>
-    <packages repository="extension" repositoryId="BannerlordModTemplateWizard.38717ece-30ed-458f-a168-a1864bba03ea">
+    <packages repository="extension" repositoryId="BannerlordModVSX.e29f6264-d4b7-4f57-a131-a59652330308">
       <package id="Lib.Harmony" version="2.0.0.9"/>
     </packages>
   </WizardData>

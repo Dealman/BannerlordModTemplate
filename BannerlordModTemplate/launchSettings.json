@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+        "Default Debugging Template": {
+            "commandName": "Executable",
+            "executablePath": "$BannerlordExecutable$",
+            "commandLineArgs": "$BannerlordDebugArgs$",
+            "workingDirectory": "$BannerlordDirectory$\\Modules\\$safeprojectname\\bin\\Win64_Shipping_Client$"
+		}
+    }
+}

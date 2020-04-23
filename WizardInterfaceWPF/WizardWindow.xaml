@@ -1,0 +1,201 @@
+﻿<Controls:MetroWindow
+    x:Class="WizardInterfaceWPF.WizardWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WizardInterfaceWPF"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Bannerlord Mod - Template Wizard"
+    Width="795"
+    Height="405"
+    MinWidth="400"
+    MinHeight="405"
+    BorderThickness="0"
+    ContentRendered="MetroWindow_ContentRendered"
+    GlowBrush="Black"
+    TitleCharacterCasing="Normal"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="/MahApps.Metro;component/Styles/Themes/Dark.Cyan.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="#FF303030">
+        <Button
+            x:Name="ConfirmButton"
+            Width="75"
+            Margin="25,0,0,8"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Controls:ControlsHelper.ContentCharacterCasing="Normal"
+            Click="ButtonClick_Manager"
+            Content="Confirm"
+            IsDefault="True"
+            IsEnabled="False" />
+        <Button
+            x:Name="CancelButton"
+            Width="75"
+            Margin="0,0,26,8"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Controls:ControlsHelper.ContentCharacterCasing="Normal"
+            Content="Cancel"
+            IsCancel="True" />
+        <TabControl Margin="10,10,11,40">
+            <TabItem Header="Main">
+                <Grid Background="#FF303030">
+                    <GroupBox
+                        Height="81"
+                        Margin="10,10,10,0"
+                        VerticalAlignment="Top"
+                        Controls:ControlsHelper.ContentCharacterCasing="Normal"
+                        Header="Paths">
+                        <Grid Margin="0">
+                            <TextBox
+                                x:Name="PathTextBox"
+                                Margin="212,10,86,0"
+                                VerticalAlignment="Top"
+                                Controls:TextBoxHelper.Watermark="Browse to Bannerlord's Installation Folder..."
+                                IsReadOnly="True"
+                                TextWrapping="Wrap" />
+                            <Border
+                                Height="26"
+                                MinHeight="26"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                BorderThickness="1">
+                                <TextBlock
+                                    Margin="-1,-1,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    TextWrapping="Wrap"><Run Text="M" /><Run Text="&amp;B 2: Bannerlord Installation Path:" /></TextBlock>
+                            </Border>
+                            <Button
+                                x:Name="BrowsePathButton"
+                                MinWidth="70"
+                                Margin="0,9,10,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Controls:ControlsHelper.ContentCharacterCasing="Normal"
+                                Click="ButtonClick_Manager"
+                                Content="Browse"
+                                ToolTip="Left-Click to browse folder. Right-Click to open selected folder." />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox
+                        Margin="10,96,10,0"
+                        VerticalAlignment="Top"
+                        Controls:ControlsHelper.ContentCharacterCasing="Normal"
+                        Header="Mod Template Configuration">
+                        <Grid>
+                            <CheckBox
+                                x:Name="IncludeSubModuleCheckBox"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Include Basic SubModule Class"
+                                IsChecked="True"
+                                ToolTip="This will generate a basic SubModule class." />
+                            <CheckBox
+                                x:Name="IncludeReadmeCheckBox"
+                                Margin="10,33,0,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Include Readme File"
+                                ToolTip="This will generate a Readme file which will contain some useful information and some links to help you get started." />
+                            <CheckBox
+                                x:Name="UseLauncherModulesCheckBox"
+                                Margin="202,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Debug With Same Modules as Game Launcher"
+                                ToolTip="Check this if you want the debugging to use the same modules last used by the game launcher." />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox
+                        Margin="10,198,10,0"
+                        VerticalAlignment="Top"
+                        Controls:ControlsHelper.ContentCharacterCasing="Normal"
+                        Header="Packages">
+                        <Grid UseLayoutRounding="False">
+                            <CheckBox
+                                x:Name="IncludeHarmonyCheckBox"
+                                Margin="10,10,0,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Include Harmony"
+                                ToolTip="This will include the Harmony library which lets you patch the game in various ways" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Advanced">
+                <Grid Background="#FF303030">
+                    <TextBlock
+                        Margin="10"
+                        Text="This is a placeholder for future content..."
+                        TextWrapping="Wrap" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="About">
+                <Grid Background="#FF303030">
+                    <RichTextBox>
+                        <FlowDocument>
+                            <Paragraph TextAlignment="Center">
+                                <Run
+                                    FontSize="14"
+                                    FontWeight="Bold"
+                                    Text="M&amp;B 2: Bannerlord Mod Template for Visual Studio" />
+                                <LineBreak />
+                                <Run FontStyle="Italic" Text="Version 2.0.0.0" />
+                            </Paragraph>
+                            <Paragraph>
+                                <Run
+                                    FontSize="14"
+                                    FontWeight="Bold"
+                                    Text="Changelog:" />
+                            </Paragraph>
+                            <Paragraph>
+                                <Run FontWeight="Bold" Text="Version 2.0.0.0" />
+                                <LineBreak />
+                                <Run Text="[Updated]: NuGet packages can now be made optional, much easier " />
+                                <Run Text="to add" />
+                                <Run Text=" new ones to be added upon request" />
+                                <LineBreak />
+                                <Run Text="[Changed]: Wizard is now build with WPF instead of Forms, more extensible for future content" />
+                                <LineBreak />
+                                <Run Text="[New]: Project " />
+                                <Run Text="has been refactored" />
+                                <Run Text=" and re-created from scratch" />
+                            </Paragraph>
+                            <Paragraph>
+                                <Run Text="Still some stuff to be improved upon, like what actually needs to be in the VSIX and not - make it less bloated." />
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Separator
+            Width="10"
+            Margin="10,339,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{x:Null}"
+            Foreground="{x:Null}" />
+        <Separator
+            Width="10"
+            Margin="766,339,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{x:Null}"
+            Foreground="{x:Null}" />
+    </Grid>
+</Controls:MetroWindow>
