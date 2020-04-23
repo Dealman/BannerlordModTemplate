@@ -26,6 +26,12 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="GitHubButton" Content="GitHub" Click="ButtonClick_Manager"/>
+            <Button x:Name="ForumButton" Content="Forum" Click="ButtonClick_Manager"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
     <Grid Background="#FF303030">
         <Button
             x:Name="ConfirmButton"
@@ -154,7 +160,7 @@
                                     FontWeight="Bold"
                                     Text="M&amp;B 2: Bannerlord Mod Template for Visual Studio" />
                                 <LineBreak />
-                                <Run FontStyle="Italic" Text="Version 2.0.0.0" />
+                                <Run FontStyle="Italic" Text="Version 2.0.0" />
                             </Paragraph>
                             <Paragraph>
                                 <Run
@@ -166,13 +172,17 @@
                                 <Run FontWeight="Bold" Text="Version 2.0.0.0" />
                                 <LineBreak />
                                 <Run Text="[Updated]: NuGet packages can now be made optional, much easier " />
+                                <Run Text=" " />
                                 <Run Text="to add" />
+                                <Run Text=" " />
                                 <Run Text=" new ones to be added upon request" />
                                 <LineBreak />
                                 <Run Text="[Changed]: Wizard is now build with WPF instead of Forms, more extensible for future content" />
                                 <LineBreak />
                                 <Run Text="[New]: Project " />
+                                <Run Text=" " />
                                 <Run Text="has been refactored" />
+                                <Run Text=" " />
                                 <Run Text=" and re-created from scratch" />
                             </Paragraph>
                             <Paragraph>

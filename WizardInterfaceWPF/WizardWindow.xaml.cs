@@ -52,17 +52,17 @@ namespace WizardInterfaceWPF
                 }
             }
 
-            if(sender == ConfirmButton)
-            {
+            if (sender == ConfirmButton)
                 this.DialogResult = true;
-                //this.Close();
-            }
 
-            if(sender == CancelButton)
-            {
+            if (sender == CancelButton)
                 this.DialogResult = false;
-                //this.Close();
-            }
+
+            if (sender == GitHubButton)
+                System.Diagnostics.Process.Start("https://github.com/Dealman/BannerlordModTemplate");
+
+            if (sender == ForumButton)
+                System.Diagnostics.Process.Start("https://forums.taleworlds.com/index.php?threads/release-mod-template-for-visual-studio-automatically-configs-adds-references-and-more.413981/");
         }
 
         private void MetroWindow_ContentRendered(object sender, EventArgs e)
