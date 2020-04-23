@@ -5,13 +5,12 @@ using EnvDTE;
 using WizardInterfaceWPF;
 using System.IO;
 using System.Text;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Shell;
 using NuGet.VisualStudio;
 using System.Xml.Linq;
 using System.Linq;
+using System.Windows;
 
 namespace BannerlordModVSX
 {
@@ -141,15 +140,20 @@ namespace BannerlordModVSX
                 }
             } catch (Exception ex) {
                 // Project folder would still have been created, clean it up if the user decided to back out
-                string projectFolder = Path.GetFullPath(Path.Combine(destinationDirectory, @"..\"));
 
-                if(Directory.Exists(projectFolder))
+                if(ex.InnerException is WizardBackoutException || ex.InnerException is WizardCancelledException)
                 {
-                    Directory.Delete(projectFolder, true);
+                    string projectFolder = Path.GetFullPath(Path.Combine(destinationDirectory, @"..\"));
+
+                    if (Directory.Exists(projectFolder))
+                    {
+                        Directory.Delete(projectFolder, true);
+                    } else {
+                        Directory.Delete(destinationDirectory, true);
+                    }
                 } else {
-                    Directory.Delete(destinationDirectory, true);
+                    MessageBox.Show($"An error has occurred!\n\nError Message:\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                throw;
             }
         }
 
