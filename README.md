@@ -1,6 +1,8 @@
 ## Installation
 Simply download the latest release or download the source and build it yourself. Run BannerlordModTemplate.vsix and you'll be prompted to install the extension.
 
+[Now available on Visual Studio Marketplace!](https://marketplace.visualstudio.com/items?itemName=Dealman.bannerlord-template)
+
 ## Uninstalling
 Open VS and at the top toolbar you'll have a tab called _"Extensions"_ click there and then choose _"Manage Extensions"_ and you can choose to uninstall it form there.
 
