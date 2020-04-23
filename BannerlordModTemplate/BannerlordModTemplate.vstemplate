@@ -2,7 +2,7 @@
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>Mount and Blade 2 Bannerlord Mod (C#)</Name>
-    <Description>Project template for Mount and Blade 2 Bannerlord.</Description>
+    <Description>Project template for Mount and Blade 2: Bannerlord.</Description>
     <Icon>TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <LanguageTag>csharp</LanguageTag>
@@ -27,6 +27,7 @@
     <FullClassName>BannerlordModVSX.TemplateWizard</FullClassName>
   </WizardExtension>
   <WizardData>
+    <!-- This is where we add more nuget packages, it's parsed & downloaded after project creation -->
     <packages repository="extension" repositoryId="BannerlordModVSX.e29f6264-d4b7-4f57-a131-a59652330308">
       <package id="Lib.Harmony" version="2.0.0.9"/>
     </packages>

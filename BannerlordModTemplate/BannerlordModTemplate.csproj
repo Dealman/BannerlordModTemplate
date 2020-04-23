@@ -65,7 +65,6 @@
     <Content Include="SubModule.cs">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="launchSettings.json" />
     <None Include="packages.config" />
     <None Include="ProjectTemplate.csproj" />
   </ItemGroup>
