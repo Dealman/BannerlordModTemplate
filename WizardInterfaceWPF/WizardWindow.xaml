@@ -158,41 +158,31 @@
             </TabItem>
             <TabItem Header="About">
                 <Grid Background="#FF303030">
-                    <RichTextBox>
+                    <RichTextBox IsReadOnly="True">
                         <FlowDocument>
                             <Paragraph TextAlignment="Center">
-                                <Run
-                                    FontSize="14"
-                                    FontWeight="Bold"
-                                    Text="M&amp;B 2: Bannerlord Mod Template for Visual Studio" />
-                                <LineBreak />
-                                <Run FontStyle="Italic" Text="Version 2.0.0" />
+                                <Run FontWeight="Bold" FontSize="14" Text="M&amp;B 2: Bannerlord Mod Template for Visual Studio"/>
+                                <LineBreak/>
+                                <Run FontStyle="Italic" Text="Version 2.0.0"/>
                             </Paragraph>
                             <Paragraph>
-                                <Run
-                                    FontSize="14"
-                                    FontWeight="Bold"
-                                    Text="Changelog:" />
+                                <Run FontWeight="Bold" FontSize="14" Text="Changelog:"/>
                             </Paragraph>
                             <Paragraph>
-                                <Run FontWeight="Bold" Text="Version 2.0.0.0" />
-                                <LineBreak />
-                                <Run Text="[Updated]: NuGet packages can now be made optional, much easier " />
-                                <Run Text=" " />
-                                <Run Text="to add" />
-                                <Run Text=" " />
-                                <Run Text=" new ones to be added upon request" />
-                                <LineBreak />
-                                <Run Text="[Changed]: Wizard is now build with WPF instead of Forms, more extensible for future content" />
-                                <LineBreak />
-                                <Run Text="[New]: Project " />
-                                <Run Text=" " />
-                                <Run Text="has been refactored" />
-                                <Run Text=" " />
-                                <Run Text=" and re-created from scratch" />
-                            </Paragraph>
-                            <Paragraph>
-                                <Run Text="Still some stuff to be improved upon, like what actually needs to be in the VSIX and not - make it less bloated." />
+                                <Run FontWeight="Bold" Text="Version 2.0.0"/>
+                                <LineBreak/>
+                                <Run Text="[Updated]: NuGet packages can now be made optional, much easier "/>
+                                <Run Text="to add new ones to be added upon request"/>
+                                <LineBreak/>
+                                <Run Text="[Changed]: Wizard is now buil"/>
+                                <Run Text="t"/>
+                                <Run Text=" with WPF instead of Forms, "/>
+                                <Run Text="looks better and easier to extend upon later"/>
+                                <LineBreak/>
+                                <Run Text="[New]: Project"/>
+                                <Run Text=" "/>
+                                <Run Text="has been refactored and "/>
+                                <Run Text="restructured"/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
