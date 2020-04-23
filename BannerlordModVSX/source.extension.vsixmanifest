@@ -8,7 +8,7 @@
         <License>Resources\License.txt</License>
         <ReleaseNotes>Resources\ReleaseNotes.txt</ReleaseNotes>
         <Icon>Resources\TemplateIcon.ico</Icon>
-        <PreviewImage>PreviewImage.png</PreviewImage>
+        <PreviewImage>Resources\PreviewImage.png</PreviewImage>
         <Tags>Project;Template;Mount;Blade;Bannerlord;Modding;CSharp;Extension;Harmony</Tags>
         <Preview>true</Preview>
     </Metadata>
