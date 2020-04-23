@@ -37,18 +37,6 @@ namespace BannerlordModVSX
         {
             // Visual Studio wants this or it gets very sad
             ThreadHelper.ThrowIfNotOnUIThread();
-            // Get the newly created project's root directory, so we can easily add files to it if we want
-            string projectRoot = Path.Combine(project.FullName, @"..\");
-
-            #region launchSettings.json Creation
-            // This is nasty, but wasn't sure how to otherwise add launchSettings.json via vstemplate. TODO: Refactor, Regex?
-            JRaw rawJSON = new JRaw("{ \"profiles\": { \"Default Debugging Template\": { \"commandName\": \"Executable\", \"executablePath\": \""+_replacementsDictionary["$BannerlordExecutable$"].Replace(@"\", @"\\").Replace("&amp;", "&") +"\", \"commandLineArgs\": \"" + _replacementsDictionary["$BannerlordDebugArgs$"] + "\", \"workingDirectory\": \""+_replacementsDictionary["$BannerlordDirectory$"].Replace(@"\", @"\\").Replace("&amp;", "&") + @"\\Modules\\" +_replacementsDictionary["$safeprojectname$"] + @"\\bin\\Win64_Shipping_Client""}}}");
-            using(StreamWriter configFile = File.CreateText(projectRoot + @"\Properties\launchSettings.json"))
-            {
-                JsonSerializer jsonSerializer = new JsonSerializer();
-                jsonSerializer.Serialize(configFile, rawJSON);
-            }
-            #endregion
 
             #region Installation of NuGet Packages
             // Install nuget packages | TODO: Needs to be updated if more packages are added, map each package to a bool or something
@@ -68,8 +56,6 @@ namespace BannerlordModVSX
             #region Specific Item Removal (SubModule, Readme...)
             ProjectItems projectItems = project.ProjectItems;
             DTE _dte = project.DTE;
-            // TODO: Fix? This WAS working just fine, now it's stopped working for no apparent reason...
-            // Debug check DTE, Solution, FindProjectItem etc etc
 
             if (!createSubModule)
                 _dte.Solution.FindProjectItem("SubModule.cs").Remove();
@@ -77,14 +63,6 @@ namespace BannerlordModVSX
             if (!createReadme)
                 _dte.Solution.FindProjectItem("Readme.txt").Remove();
             #endregion
-
-            //string csProjFile = projectRoot + $"{_replacementsDictionary["$safeprojectname$"]}.csproj";
-            //Debug.WriteLine($"[DEBUG]: {project.FullName}");
-            //System.Threading.Thread.Sleep(6000);
-            //string fileContents = File.ReadAllText(project.FullName);
-            Configuration tet = project.ConfigurationManager.ActiveConfiguration;
-            //Debug.WriteLine($"[DEBUG]: Contains Stuff: {fileContents.Contains("<Compile Include=\"SubModule.cs\" />")}");
-            //File.WriteAllText(project.FullName, fileContents.Replace("<Compile Include=\"SubModule.cs\" />", ""));
         }
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
