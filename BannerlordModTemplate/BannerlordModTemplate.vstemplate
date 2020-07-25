@@ -6,6 +6,8 @@
     <Icon>TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <LanguageTag>csharp</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>Games</ProjectTypeTag>
     <RequiredFrameworkVersion>4.7.2</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
     <TemplateID>5b5a7681-5d65-47cb-931d-d9f5c32c2663</TemplateID>
